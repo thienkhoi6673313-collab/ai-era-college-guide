@@ -193,7 +193,7 @@ def render_markdown(doc, path):
 
 
 def main():
-    out_name = sys.argv[1] if len(sys.argv) > 1 else "与AI共生-全书初稿.docx"
+    out_name = sys.argv[1] if len(sys.argv) > 1 else "AI时代大学生的生存指南-全书稿.docx"
     out_path = os.path.join(BASE, out_name)
 
     doc = Document()
@@ -204,21 +204,21 @@ def main():
         doc.add_paragraph()
     title = doc.add_paragraph()
     title.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    r = title.add_run("与AI共生")
-    r.font.size = Pt(36)
+    r = title.add_run("AI时代大学生的生存指南")
+    r.font.size = Pt(30)
     r.bold = True
     r.font.name = HEAD_FONT
     set_east_asia(r._element, HEAD_FONT)
     sub = doc.add_paragraph()
     sub.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    r = sub.add_run("AI时代大学生的生成指南")
+    r = sub.add_run("——从使用工具到成为AI时代的创造者")
     r.font.size = Pt(18)
     r.font.name = HEAD_FONT
     set_east_asia(r._element, HEAD_FONT)
     note = doc.add_paragraph()
     note.alignment = WD_ALIGN_PARAGRAPH.CENTER
     note.paragraph_format.space_before = Pt(48)
-    r = note.add_run("全书初稿 · 各章按简编篇幅合成，扩写至目标字数的工作仍在进行\n文中 [待核实] 标记处需在出版前完成人工核验")
+    r = note.add_run("全书稿 · 约11万字 · 人机协作流程完成\n文中 [待核实] 标记处需在出版前完成人工核验")
     r.font.size = Pt(11)
     r.font.color.rgb = RGBColor(0x80, 0x80, 0x80)
     doc.add_page_break()

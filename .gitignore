@@ -2,3 +2,5 @@
 *.tmp
 .DS_Store
 Thumbs.db
+# 流水线会把 API key 写进 .env，绝不能进版本库
+.env
